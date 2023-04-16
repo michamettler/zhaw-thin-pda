@@ -7,12 +7,12 @@ public class Stack {
     private final LinkedList<String> stack = new LinkedList<>();
 
     public Stack() {
-        stack.addFirst("#");
+        stack.addFirst("$");
     }
 
     public void clear() {
         stack.clear();
-        stack.addFirst("#");
+        stack.addFirst("$");
     }
 
     public void push(String symbol) {

@@ -1,5 +1,4 @@
 import org.example.PDACalculator;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.InvalidPropertiesFormatException;
@@ -18,7 +17,7 @@ public class PDATest {
 
     @Test
     void acceptingTestTwo() throws InvalidPropertiesFormatException {
-        assertEquals("58", calculator.calculate("3 4 + 6 2 + 8 9 + 4 3 + * * *"));
+        assertEquals("58", calculator.calculate("3 1 + 7 8 + 9 8 7 + 1 2 1 4 + + 7 + + + + + +"));
     }
 
     @Test
