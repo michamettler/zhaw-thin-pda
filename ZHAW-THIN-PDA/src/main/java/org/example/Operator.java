@@ -10,11 +10,11 @@ public enum Operator {
         this.value = value;
     }
 
-    public static boolean matches(String symbol) {
+    public static boolean noMatch(String symbol) {
         for (Operator operator : Operator.values()) {
             if (operator.value.equals(symbol))
-                return true;
+                return false;
         }
-        return false;
+        return true;
     }
 }

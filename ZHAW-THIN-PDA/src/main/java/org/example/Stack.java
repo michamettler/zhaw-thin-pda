@@ -10,11 +10,6 @@ public class Stack {
         stack.addFirst("$");
     }
 
-    public void clear() {
-        stack.clear();
-        stack.addFirst("$");
-    }
-
     public void push(String symbol) {
         stack.addLast(symbol);
     }

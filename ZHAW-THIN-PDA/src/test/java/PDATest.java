@@ -12,7 +12,7 @@ public class PDATest {
 
     @Test
     void acceptingTestOne() throws InvalidPropertiesFormatException {
-        assertEquals("664", calculator.calculate("3 4 + 6 2 + 8 9 + 4 3 + * * *"));
+        assertEquals("6664", calculator.calculate("3 4 + 6 2 + 8 9 + 4 3 + * * *"));
     }
 
     @Test
