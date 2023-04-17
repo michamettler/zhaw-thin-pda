@@ -1,12 +1,13 @@
 package org.example;
 
-import java.util.InvalidPropertiesFormatException;
 import java.util.Objects;
 
 public class PDACalculator {
 
     private State currentState = State.START;
     private final Stack stack = new Stack();
+
+    private String numberPattern = "[0-9]+";
 
     public String calculate(String input) throws IllegalArgumentException {
         String[] symbols = input.split(" ");
@@ -18,7 +19,7 @@ public class PDACalculator {
                         stack.push(symbol);
                         currentState = State.FIRST_NUMBER;
                     } else {
-                        throw new IllegalArgumentException("Invalid Format!");
+                        throw new IllegalArgumentException();
                     }
                     break;
                 case FIRST_NUMBER:
@@ -26,7 +27,7 @@ public class PDACalculator {
                         stack.push(symbol);
                         currentState = State.N_NUMBER;
                     } else {
-                        throw new IllegalArgumentException("Invalid Format!");
+                        throw new IllegalArgumentException();
                     }
                     break;
                 case N_NUMBER:
@@ -45,16 +46,25 @@ public class PDACalculator {
         return stack.pop();
     }
 
-    private void executeAddition() {
+    private void executeAddition() throws IllegalArgumentException {
         String first = stack.pop();
         String second = stack.pop();
-        stack.push(String.valueOf(Integer.parseInt(first) + Integer.parseInt(second)));
+
+        if (first.matches(numberPattern) && first.matches(numberPattern) && !("$").equals(second)) {
+            stack.push(String.valueOf(Integer.parseInt(first) + Integer.parseInt(second)));
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
-    private void executeMultiplication() {
+    private void executeMultiplication() throws IllegalArgumentException {
         String first = stack.pop();
         String second = stack.pop();
-        stack.push(String.valueOf(Integer.parseInt(first) * Integer.parseInt(second)));
+        if (first.matches(numberPattern) && first.matches(numberPattern)) {
+            stack.push(String.valueOf(Integer.parseInt(first) * Integer.parseInt(second)));
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
 
