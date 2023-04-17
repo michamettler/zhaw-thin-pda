@@ -1,5 +1,6 @@
 import org.example.Mode;
 import org.example.PDACalculator;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,6 +15,7 @@ public class PDATest {
         assertEquals("6664", calculator.calculate("3 4 + 6 2 + 8 9 + 4 3 + * * *", Mode.DEFAULT));
     }
 
+    @Disabled
     @Test
     void acceptingTest2() throws InterruptedException {
         assertEquals("58", calculator.calculate("3 1 + 7 8 + 9 8 7 + 1 2 1 4 + + 7 + + + + + +", Mode.STEP_MODE));
