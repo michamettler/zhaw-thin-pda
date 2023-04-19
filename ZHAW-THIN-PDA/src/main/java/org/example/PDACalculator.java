@@ -65,7 +65,7 @@ public class PDACalculator {
     private void executeMultiplication() throws IllegalArgumentException {
         String first = stack.pop();
         String second = stack.pop();
-        if (first.matches(numberPattern) && first.matches(numberPattern)) {
+        if (first.matches(numberPattern) && first.matches(numberPattern) && !("$").equals(second)) {
             stack.push(String.valueOf(Integer.parseInt(first) * Integer.parseInt(second)));
         } else {
             throw new IllegalArgumentException();
