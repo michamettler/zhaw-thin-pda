@@ -7,7 +7,6 @@ public class PDACalculator {
 
     private State currentState = State.START;
     private final Stack stack = new Stack();
-    private String numberPattern = "[0-9]+";
     private Mode mode;
 
     public String calculate(String input, Mode mode) throws IllegalArgumentException, InterruptedException {
